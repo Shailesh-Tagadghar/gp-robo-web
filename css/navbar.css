@@ -1,0 +1,12 @@
+.navbar-brand img {
+    max-height: 50px;
+  }
+
+.navbar-nav li{
+    font-size: 20px;
+}
+
+.navbar-nav li:hover {
+    text-decoration: underline #198754;;
+    font: bolder;
+}

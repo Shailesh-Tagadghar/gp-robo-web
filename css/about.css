@@ -1,0 +1,86 @@
+.about{
+    background-color: aliceblue;
+    width: auto;
+    height: fit-content;
+    padding-left: 90px;
+    padding-right: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+.about-details{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.about-details h2{
+    text-align: center;
+    text-decoration: underline;
+    padding-bottom: 20px;
+    margin-top: 120px;
+    font-size: 35px;
+}
+
+.about-details h1{
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 40px;
+    font-size: 35px;
+}
+
+.about-details p{
+    text-align: center;
+    font-size: 20px;
+    padding-top: 40px;
+}
+
+.col-md-6 img{
+    width: 600px;
+    height: 700px;
+}
+
+
+.achivement{
+    width: auto;
+    height: fit-content;
+    background-color: aliceblue;
+}
+
+.achivement h1{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.achivement div{
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    height: fit-content;
+    padding-bottom: 5px;
+}
+
+.achivement div div div{
+    width: auto;
+    height: fit-content;
+}
+
+.col{
+    margin-left: 150px;
+    margin-right: 100px;
+}
+
+.card-text{
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+.card img{
+    padding-top: 15px;
+    border-radius: 50%;
+    width: auto;
+    height: 300px;
+}

@@ -1,0 +1,172 @@
+.navbar-brand img {
+    max-height: 50px;
+  }
+
+.navbar-nav li{
+    font-size: 20px;
+}
+
+.navbar-nav li:hover {
+    text-decoration: underline #198754;;
+    font: bolder;
+}
+
+.carousel-inner div img{
+    width: auto;
+    height: 450px;
+}
+
+.carousel-inner div h5{
+    color: black;
+    font-size: 27px;
+    text-decoration: underline;
+    padding-bottom: 40px;
+    padding-right: 350px;
+}
+
+.carousel-inner div p{
+    color: black;
+    font-size: 20px;
+    padding-bottom: 90px;
+    padding-right: 350px;
+}
+
+.achivement{
+    width: auto;
+    height: fit-content;
+    background-color: aliceblue;
+}
+
+.achivement h5{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 27px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.achivement div{
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    height: fit-content;
+    padding-bottom: 5px;
+}
+
+.achivement div div div{
+    width: auto;
+    height: fit-content;
+    align-items: center;
+}
+
+.card-text{
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+.card img{
+    padding-top: 15px;
+    border-radius: 50%;
+    width: auto;
+    height: 300px;
+}
+
+.footer{
+    /* background-color: aliceblue;
+    width: auto;
+    height: fit-content;
+    padding-bottom: 30px;
+    padding-top: 20px; */
+
+
+    display: flex;
+    justify-content: space-between;
+    /* align-items: flex-start; */
+    background-color: aliceblue;
+    padding: 20px;
+}
+
+.left-side{
+    width: 500px;
+}
+
+.left-side h1{
+    padding-left: 15%;
+    padding-top: 5px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.left-side p{
+    padding-left: 15%;
+    padding-top: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.left-side h2{
+    padding-left: 15%;
+    padding-top: 25px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.left-side ul a img{
+    padding-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.right-side{
+    width: 500px;
+}
+
+.right-side h1{
+    padding-top: 5px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.right-side ul{
+    margin-left: 160px;
+}
+
+.right-side ul li {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.right-side ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.right-side ul li a:hover{
+    color: black;
+    text-decoration: underline #198754;
+    font-size: 18px;
+}
+
+.rightmost-side h1{
+    margin-right: 130px;
+    padding-top: 5px;
+    font-size: 30px;
+    text-align: center;   
+}
+
+.hr-line {
+    height: 0.5px;
+    background-color: black;
+}
+
+.copyright{
+    background-color: aliceblue;
+    padding-bottom: 10px;
+}
+
+.copyright p{
+    padding-top: 20px;
+    font-size: 16px;
+    text-align: center;
+}
