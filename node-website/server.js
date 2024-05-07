@@ -13,17 +13,17 @@ app.use(express.static('public'));
 const allowedFileTypes = ['.pdf', '.doc', '.docx'];
 
 // Configure multer for file uploads
-// const upload = multer({
-//     dest: 'uploads/',
-//     fileFilter: (req, file, cb) => {
-//         const extname = path.extname(file.originalname).toLowerCase();
-//         if (allowedFileTypes.includes(extname)) {
-//             return cb(null, true);
-//         } else {
-//             return cb(new Error('Only PDF or Word files are allowed'));
-//         }
-//     }
-// });
+const upload = multer({
+    dest: 'uploads/',
+    fileFilter: (req, file, cb) => {
+        const extname = path.extname(file.originalname).toLowerCase();
+        if (allowedFileTypes.includes(extname)) {
+            return cb(null, true);
+        } else {
+            return cb(new Error('Only PDF or Word files are allowed'));
+        }
+    }
+});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -56,8 +56,8 @@ app.post('/submitForm', upload.single('resume'), (req, res) => {
 
     // Send email
     sendEmail(formData.email, jsonData, tableData, resumeFile)
-        .then(() => res.send('Form submitted successfully'))
-        .catch(error => res.status(500).send('Error submitting form: ' + error.message));
+    .then(() => res.send('success'))
+    .catch(error => res.status(500).json({ error: 'Error submitting form: ' + error.message }));
 });
 
 
