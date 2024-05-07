@@ -55,9 +55,35 @@
                 <label for="resume" class="form-label">Resume:</label>
                 <input type="file" class="form-control" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" onclick="submitForm()">Submit</button>
         </form>
     </div>
+
+    <script>
+        function submitForm() {
+            var form = document.getElementById('applicationForm');
+            var formData = new FormData(form);
+            fetch('/submitForm', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    alert('Form submitted successfully! Our team will connect with you shortly.');
+                    // Redirect to career page
+                    window.location.href = '/careers.html';
+                } else {
+                    // Show error message
+                    alert('Error submitting form. Please try again later.');
+                }
+            })
+            .catch(error => {
+                // Show error message
+                alert('Error submitting form. Please try again later.');
+            });
+        }
+    </script>
 
     <div id="footer"></div>
 
