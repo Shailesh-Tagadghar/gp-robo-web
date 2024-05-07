@@ -1,0 +1,86 @@
+.careers{
+    background-color: aliceblue;
+    width: auto;
+    height: fit-content;
+    padding-left: 90px;
+    padding-right: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.careers h1{
+    text-align: center;
+    padding-top: 40px;
+}
+
+.careers-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+/* Custom CSS for the dropdown menu with checkboxes */
+#dropdownMenuButton{
+    width: 250px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    width: 250px; /* Increase the width as desired */
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    flex-direction: row;
+}
+
+.dropdown-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* CSS for selected dropdown list item */
+.dropdown-item.selected {
+    background-color: lightblue; /* Change the background color as desired */
+}
+
+.dropdown-item:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+
+.dropdown-toggle:focus+.dropdown-menu {
+    display: block;
+}

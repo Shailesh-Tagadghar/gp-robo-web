@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry Details Page</title>
+</head>
+<body>
+    <h1>Enquiry Details Page</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact No.</th>
+                <th>College Name</th>
+                <th>Year of Passing</th>
+                <th>Role Category</th>
+                <th>Exceptional Work</th>
+            </tr>
+        </thead>
+        <tbody id="formDataBody">
+            <!-- Form data will be inserted here dynamically -->
+        </tbody>
+    </table>
+
+    <script>
+        // Fetch form data from the server
+        fetch('/api/formData?password=Shailesh@1')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('formDataBody');
+                data.forEach(entry => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${entry.name}</td>
+                        <td>${entry.email}</td>
+                        <td>${entry.contactNo}</td>
+                        <td>${entry.collegeName}</td>
+                        <td>${entry.yearOfPassing}</td>
+                        <td>${entry.roleCategory}</td>
+                        <td>${entry.exceptionalWork}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching form data:', error));
+    </script>
+</body>
+</html>
