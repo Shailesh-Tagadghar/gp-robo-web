@@ -1,0 +1,215 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <input type="text" id="searchInput" placeholder="Search by Name" oninput="filterData()">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact No.</th>
+                <th>College Name</th>
+                <th>Year of Passing</th>
+                <th>Role Category</th>
+                <th>Exceptional Work</th>
+                <th>Resume</th>
+            </tr>
+        </thead>
+        <tbody id="formData">
+            <% formData.forEach(application => { %>
+                <tr>
+                    <td><%= application.name %></td>
+                    <td><%= application.email %></td>
+                    <td><%= application.contactNo %></td>
+                    <td><%= application.collegeName %></td>
+                    <td><%= application.yearOfPassing %></td>
+                    <td><%= application.roleCategory.join(', ') %></td>
+                    <td><%= application.exceptionalWork %></td>
+                    <td><a href="/uploads/<%= application.resume %>" target="_blank"><%= application.resume %></a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <script>
+        function filterData() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.querySelector("table");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 95%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            outline: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+            white-space: nowrap;
+        }
+
+        /* tr:nth-child(even) {
+            background-color: #f2f2f2;
+        } */
+
+        /* tr:hover {
+            background-color: #ddd;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <input type="text" id="searchInput" placeholder="Search by Name" oninput="filterData()">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact No.</th>
+                    <th>College Name</th>
+                    <th>Year of Passing</th>
+                    <th>Role Category</th>
+                    <th>Exceptional Work</th>
+                    <th>Resume</th>
+                </tr>
+            </thead>
+            <tbody id="formData">
+                <!-- Form data will be dynamically inserted here -->
+                <% formData.forEach(application => { %>
+                    <tr>
+                        <td style="white-space: nowrap;"><%= application.name %></td>
+                        <td style="white-space: nowrap;"><%= application.email %></td>
+                        <td style="white-space: nowrap;"><%= application.contactNo %></td>
+                        <td><%= application.collegeName %></td>
+                        <td><%= application.yearOfPassing %></td>
+                        <td><%= application.roleCategory.join(', ') %></td>
+                        <td><%= application.exceptionalWork %></td>
+                        <td><a href="/uploads/<%= application.resume %>" target="_blank"><%= application.resume %></a></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function filterData() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.querySelector("table");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
