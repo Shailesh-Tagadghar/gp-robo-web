@@ -125,15 +125,15 @@
 // //         // Configure your email service
 // //         service: 'Gmail',
 // //         auth: {
-// //             user: 'tagadgharshailesh@gmail.com', // Your email address
-// //             pass: 'ehwb yjsu vqac mdik' // Your email password
+// //             user: 'exmaple@gmail.com', // Your email address
+// //             pass: '' // Your email password
 // //         }
 // //     });
 
 // //     // Setup email data
 // //     let mailOptions = {
 // //         from: senderEmail, // Sender will be the email provided in the form
-// //         to: 'tagadgharshailesh@gmail.com', // Your email address as recipient
+// //         to: 'example@gmail.com', // Your email address as recipient
 // //         subject: 'New Career Application',
 // //         text: 'New career application received!',
 // //         // html: `<p>New career application received!</p><p><strong>JSON Data:</strong></p><pre>${jsonData}</pre><p><strong>Tabular Data:</strong></p>${tableData}`,
@@ -259,7 +259,7 @@ async function sendEmail(senderEmail, application) {
     // Setup email data
     let mailOptions = {
         from: senderEmail, // Use a fixed sender email
-        to: 'tagadgharshailesh@gmail.com', // Your email address as recipient
+        to: 'example@gmail.com', // Your email address as recipient
         subject: 'New Career Application',
         text: 'New career application received!',
         html: `<p>New career application received!</p>
@@ -309,6 +309,21 @@ app.get('/admin-dashboard', async (req, res) => {
         res.status(500).send('Error fetching form data');
     }
 });
+
+// Delete record endpoint
+// app.delete('/deleteRecord/:email', async (req, res) => {
+//     try {
+//         const email = req.params.email;
+//         // Find the application by email and delete it
+//         await Application.findOneAndDelete({ email: email });
+//         // Send a success response
+//         res.status(200).json({ message: 'Record deleted successfully' });
+//     } catch (error) {
+//         console.error('Error deleting record:', error);
+//         // Send an error response
+//         res.status(500).json({ error: 'Error deleting record: ' + error.message });
+//     }
+// });
 
 
 app.listen(PORT, () => 
